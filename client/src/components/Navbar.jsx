@@ -23,7 +23,7 @@ class Navbar extends Component {
           <nav className="navbar navbar-inverse">
             <div className="container-fluid">
               <div className="navbar-header">
-                <button
+                {/* <button
                   type="button"
                   class="navbar-toggle"
                   data-toggle="collapse"
@@ -32,7 +32,7 @@ class Navbar extends Component {
                   <span class="icon-bar" />
                   <span class="icon-bar" />
                   <span class="icon-bar" />
-                </button>
+                </button> */}
                 <a className="navbar-brand" href="/">
                   Home
                 </a>

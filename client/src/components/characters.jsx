@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import MarvelWrapper from "marvel-wrapper";
 import { setTimeout } from "timers";
 import { Link } from "react-router-dom";
@@ -7,7 +6,7 @@ import { Link } from "react-router-dom";
 const marvel = new MarvelWrapper({
   privateKey: process.env.REACT_APP_PRIVATE_KEY,
   publicKey: process.env.REACT_APP_PUBLIC_KEY,
-  limit: "20"
+  limit: "10"
 });
 
 var t;  //for time delay on search 
@@ -54,9 +53,10 @@ class Characters extends Component {
     return this.state.allCharacters.map((character, i) => {
       console.log(character)
       return (
+        <div className = "whole-list">
         <div key={i} className="characterslist">
           <img
-            className="charctersimg"
+            className="charactersimg"
             src={
               character.thumbnail.path +
               "." +
@@ -67,9 +67,10 @@ class Characters extends Component {
           <Link exact to={`/singleCharacter/${character.id}`}>
           <h3>{character.name}</h3>
           </Link>
-          <h4>{character.description}</h4>
+          {/* <h4>{character.description}</h4> */}
           {/* <p>{allBeers.description}</p>
           <p>Contributed by: {allBeers.contributed_by}</p> */}
+        </div>
         </div>
       );
     });
@@ -79,8 +80,11 @@ class Characters extends Component {
     return (
     <div>
       <h1>Characters</h1>
-      <input type="text" placeholder="search..." onChange={this.searchCharacters}/>
+      <input className = "searchbar" type="text" placeholder="search..." onChange={this.searchCharacters}/>
+      <div className = "entire-list">
+
       {this.showCharacters()}
+      </div>
     
     </div>)
   }

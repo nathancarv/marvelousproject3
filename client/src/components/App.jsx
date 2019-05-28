@@ -42,7 +42,7 @@ export default class App extends Component {
           {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
           {api.isLoggedIn() && <Link to="/" onClick={(e) => this.handleLogoutClick(e)}>Logout</Link>}
       
-      
+
         </header>
         <Navbar/>
         <Switch>
@@ -50,6 +50,7 @@ export default class App extends Component {
         <Route path="/profile" exact component={Profile} /> 
           <Route path="/characters" exact component={Characters} /> 
           <Route path="/singleCharacter/:id" exact component={singleCharacter} /> 
+
           <Route path="/comics" exact component={Comics} />
           <Route path="/signup" component={Signup} />
           <Route path="/login" component={Login} />

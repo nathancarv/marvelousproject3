@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const marvel = new MarvelWrapper({
   privateKey: process.env.REACT_APP_PRIVATE_KEY,
   publicKey: process.env.REACT_APP_PUBLIC_KEY,
-  limit: "20"
+  limit: "10"
 });
 
 var t; //for time delay on search
@@ -42,9 +42,7 @@ class Comics extends Component {
             src={comic.thumbnail.path + "." + comic.thumbnail.extension}
             alt=""
           />
-          <Link exact to={`/singleComic/${comic.id}`}>
-            <h3>{comic.name}</h3>
-          </Link>
+            <h3>{comic.title}</h3>
           <h4>{comic.description}</h4>
         </div>
       );
