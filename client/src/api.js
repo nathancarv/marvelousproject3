@@ -96,4 +96,11 @@ export default {
       .then(res => res.data)
       .catch(errHandler)
   },
+
+  getRandomCharacters() {
+    return service
+    .get('/randomCharacters')
+    .then(res => res.data)
+      .catch(errHandler)
+  }
 }
