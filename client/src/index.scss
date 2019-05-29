@@ -27,9 +27,11 @@ $primary:black;
 .homepage {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background-image: url("./images/Marvelhome.jpg");
+  background-image: url("./images/home.png");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 90%;
   width:100vw;
   height:120vh;
   color: white;
@@ -109,6 +111,10 @@ $primary:black;
   width: 300px;
   margin: 40px;
 }
+.comicscard{
+  width: 300px;
+  margin: 40px;
+}
 
 img.bio-image{
   width: 15vw;
@@ -116,13 +122,67 @@ img.bio-image{
 }
 
 div.col.caption h2{
-  font-size: 2rem;
+  font-size: 30px;
+  color:white;
 }
 
 div.col.caption h3{
-  font-size: 1rem;
+  font-size: 28px;
+  color: white;
 }
 
+div.characterspage{
+  background-image: url("./images/marvelbackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50%;
+  font-family: 'Bangers', cursive;
+  width:100vw;
+  height:120vh;
+
+  // background-size: cover;
+}
+
+div.characterdetails{
+  background-color: rgb(155, 1, 3);
+  font-family: 'Bangers', cursive;
+}
+
+div.card-body.comics h3{
+  font-size: 16px;
+}
+
+div.card-body.comics h4{
+  font-size: 13px;
+}
+div.container-fluid{
+  width: 30%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: 'Bangers', cursive;
+  color: white;
+}
+nav.navbar.navbar-inverse{
+ color: rgb(20, 20, 20);
+}
+a.navbar-brand{
+  color: white;
+}
+
+h1.App-title{
+  font-family: 'Bangers', cursive;
+  color: rgb(155, 1, 3);
+  font-size: 40px;
+}
+
+div.hometitle{
+  font-family: 'Bangers', cursive;
+  color: white;
+  font-size: 25px;
+}
 // .characterslist {
 //   width: 18vw;
 //   background: black;

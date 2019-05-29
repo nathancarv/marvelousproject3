@@ -4,7 +4,9 @@ class Home extends Component {
   render() {
     return (
       <div className="homepage">
-        Welcome to the Marvel Fan Clun Page!
+        <div className="hometitle">
+        Welcome to the Marvel Fan Club Page!
+        </div>
       </div>
       // <div>
       //   <input class="retrigger" type="radio" name="rerun" id="retrigger--1" />

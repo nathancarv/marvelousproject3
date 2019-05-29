@@ -64,9 +64,7 @@ class Characters extends Component {
               </Link>
             </h5>
             
-            <a href="#" class="btn btn-primary">
-              Go somewhere
-            </a>
+          
           </div>
         </div>
         </div>
@@ -96,7 +94,7 @@ class Characters extends Component {
 
   render() {
     return (
-      <div>
+      <div className="characterspage">
         <h1>Characters</h1>
         <input
           className="searchbar"

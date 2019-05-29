@@ -76,7 +76,7 @@ class singleCharacter extends Component {
                           class="card-img-top"
                           alt="..."
                         />
-                        <div class="card-body">
+                        <div class="card-body comics">
                           <div class="card-title">
                             <h3>{item.title}</h3>
 
