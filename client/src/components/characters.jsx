@@ -9,14 +9,12 @@ const marvel = new MarvelWrapper({
   limit: "10"
 });
 
-var t;  //for time delay on search 
-
-
+var t; //for time delay on search
 
 class Characters extends Component {
   state = {
     allCharacters: [],
-    t:null
+    t: null
   };
   componentDidMount() {
     console.log("yo");
@@ -29,64 +27,90 @@ class Characters extends Component {
     //   .catch(err => {
     //     console.log(err);
     //   });
-   
   }
 
   searchCharacters = e => {
-    let val = e.target.value
+    let val = e.target.value;
     //let q = this.state.t
-    window.clearTimeout(t)
-    t = window.setTimeout(()=>{
+    window.clearTimeout(t);
+    t = window.setTimeout(() => {
       marvel.character.search(val).then(response => {
         // do what you want with the response
-        if(response.data){
-          this.setState({allCharacters:response.data.results})
+        if (response.data) {
+          this.setState({ allCharacters: response.data.results });
         }
       });
-    },3000)
+    }, 3000);
     //this.setState({t})
-
-
   };
 
   showCharacters = () => {
     return this.state.allCharacters.map((character, i) => {
-      console.log(character)
+      console.log(character);
       return (
-        <div className = "whole-list">
-        <div key={i} className="characterslist">
+        <div class="col-lg-4">
+        <div class="card-deck">
+        <div class="card characterscard" >
           <img
-            className="charactersimg"
-            src={
-              character.thumbnail.path +
-              "." +
-              character.thumbnail.extension
-            }
-            alt=""
+            src={character.thumbnail.path + "." + character.thumbnail.extension}
+            class="card-img-top"
+            alt="..."
           />
-          <Link exact to={`/singleCharacter/${character.id}`}>
-          <h3>{character.name}</h3>
-          </Link>
-          {/* <h4>{character.description}</h4> */}
-          {/* <p>{allBeers.description}</p>
-          <p>Contributed by: {allBeers.contributed_by}</p> */}
+          <div class="card-body">
+            <h5 class="card-title">
+              {" "}
+              <Link exact to={`/singleCharacter/${character.id}`}>
+                <h3>{character.name}</h3>
+              </Link>
+            </h5>
+            
+            <a href="#" class="btn btn-primary">
+              Go somewhere
+            </a>
+          </div>
         </div>
         </div>
+        </div>
+        // <div className = "whole-list">
+        // <div key={i} className="characterslist">
+        //   <img
+        //     className="charactersimg"
+        //     src={
+        //       character.thumbnail.path +
+        //       "." +
+        //       character.thumbnail.extension
+        //     }
+        //     alt=""
+        //   />
+        //   <Link exact to={`/singleCharacter/${character.id}`}>
+        //   <h3>{character.name}</h3>
+        //   </Link>
+        //   {/* <h4>{character.description}</h4> */}
+        //   {/* <p>{allBeers.description}</p>
+        //   <p>Contributed by: {allBeers.contributed_by}</p> */}
+        // </div>
+        // </div>
       );
     });
   };
 
   render() {
     return (
-    <div>
-      <h1>Characters</h1>
-      <input className = "searchbar" type="text" placeholder="search..." onChange={this.searchCharacters}/>
-      <div className = "entire-list">
-
-      {this.showCharacters()}
+      <div>
+        <h1>Characters</h1>
+        <input
+          className="searchbar"
+          type="text"
+          placeholder="search..."
+          onChange={this.searchCharacters}
+        />
+        <div className="entire-list container">
+          <div class="row">
+        {this.showCharacters()}
+        </div>
+        </div>
       </div>
-    
-    </div>)
+    );
   }
 
   // render() {

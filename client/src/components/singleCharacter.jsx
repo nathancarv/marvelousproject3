@@ -36,40 +36,60 @@ class singleCharacter extends Component {
     if (this.state.selectedcharacter.hasOwnProperty("name")) {
       return (
         <div className="characterdetails">
-          <div className="character-bio">
-            <img
-              className="bio-image"
-              src={
-                this.state.selectedcharacter.thumbnail.path +
-                "." +
-                this.state.selectedcharacter.thumbnail.extension
-              }
-              alt=""
-            />
-            <div className="caption">
-              <h2>{this.state.selectedcharacter.name}</h2>
-              <h3>{this.state.selectedcharacter.description}</h3>
+          <div class="container character-bio">
+            <div class="row">
+              <div class="col-lg-4">
+                <img
+                  className="bio-image"
+                  src={
+                    this.state.selectedcharacter.thumbnail.path +
+                    "." +
+                    this.state.selectedcharacter.thumbnail.extension
+                  }
+                  alt=""
+                />
+              </div>
+              <div class="col caption">
+                <h2>{this.state.selectedcharacter.name}</h2>
+                <h3>{this.state.selectedcharacter.description}</h3>
+              </div>
             </div>
+
             {/* </Link> */}
             {/* <h4>{this.state.selectedcharacter.description}</h4> */}
           </div>
           <h5>{this.state.selectedcharacter.getComics}</h5>
 
-          {this.state.allComics.map((item, i) => {
-            return (
-              <div key={i} className="comicslist">
-                <img
-                  className="comicsimg"
-                  src={item.thumbnail.path + "." + item.thumbnail.extension}
-                  alt=""
-                />
+          <div class="container comicdetails">
+            <div class="row">
+              {this.state.allComics.map((item, i) => {
+                return (
+                  <div class="col-lg-4">
+                    <div class="card-deck">
+                      <div class="card comicscard">
+                        {/* <div key={i} className="comicslist"> */}
+                        <img
+                          className="comicsimg"
+                          src={
+                            item.thumbnail.path + "." + item.thumbnail.extension
+                          }
+                          class="card-img-top"
+                          alt="..."
+                        />
+                        <div class="card-body">
+                          <div class="card-title">
+                            <h3>{item.title}</h3>
 
-                <h3>{item.title}</h3>
-
-                <h4>{item.description}</h4>
-              </div>
-            );
-          })}
+                            <h4>{item.description}</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
           {/* <p>{allBeers.description}</p> */}
           {/* <p>Contributed by: {allBeers.contributed_by}</p> */}
         </div>

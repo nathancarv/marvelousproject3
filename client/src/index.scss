@@ -2,9 +2,7 @@
 // Definition of variables
 $primary:black;
 
-.container{
-  background-color: black !important;
-}
+
 
 .navigation{
   background-color: black !important;
@@ -107,89 +105,106 @@ $primary:black;
   }
 }
 
-
-.characterslist {
-  width: 18vw;
-  background: black;
-  height: 350px;
-  margin: .5vh .5vw;
-  border-radius: 25px;
-  // display: flex;
+.characterscard {
+  width: 300px;
+  margin: 40px;
 }
 
-.comicslist{
-  width: 20vw;
-  background: black;
-  height: 350px;
-  margin: .5vh .5vw;
-  border-radius: 25px;
-  display: inline-flex;
-  flex-wrap: wrap;
-
-}
-.comicslist img{
-  margin: auto;
-}
-
-.comicslist h3 {
-  font-size: 10px;
-  color: white;
-  text-align: center;
-}
-
-.comicslist h4{
-  font-size: 8px;
-  color: white;
-}
-.characterslist:hover {
-  background: red;
-  transition: .5s;
-}
-
-// .characterslist h4 {
-//   font-size: 2vh;
-//   color: white;
-// }
-
-img.charactersimg {
+img.bio-image{
   width: 15vw;
-  height: 250px;
+ height: 250px;
 }
 
-img.comicsimg {
-  width: 15vw;
-  height: 250px;
+div.col.caption h2{
+  font-size: 2rem;
 }
 
-
-.entire-list {
-  display: flex;
-  width: 100vw;
-  flex-wrap: wrap;
-  margin-left: 2vw;
+div.col.caption h3{
+  font-size: 1rem;
 }
 
-.searchbar {
-  margin-bottom: 2vh;
-}
-
-// .character-bio {
+// .characterslist {
+//   width: 18vw;
+//   background: black;
+//   height: 350px;
+//   margin: .5vh .5vw;
+//   border-radius: 25px;
 //   // display: flex;
 // }
 
-.bio-image {
-  width: 25vw;
-  position: relative;
-  right: 30vw;
-  margin-top: 8vh;
-}
+// .comicslist{
+//   width: 20vw;
+//   background: black;
+//   height: 350px;
+//   margin: .5vh .5vw;
+//   border-radius: 25px;
+//   display: inline-flex;
+//   flex-wrap: wrap;
 
-.caption {
-  width: 50vw;
-  position: relative;
-  left: 42vw;
-  bottom: 52vh;
-}
+// }
+// .comicslist img{
+//   margin: auto;
+// }
+
+// .comicslist h3 {
+//   font-size: 10px;
+//   color: white;
+//   text-align: center;
+// }
+
+// .comicslist h4{
+//   font-size: 8px;
+//   color: white;
+// }
+// .characterslist:hover {
+//   background: red;
+//   transition: .5s;
+// }
+
+// // .characterslist h4 {
+// //   font-size: 2vh;
+// //   color: white;
+// // }
+
+// img.charactersimg {
+//   width: 15vw;
+//   height: 250px;
+// }
+
+// img.comicsimg {
+//   width: 15vw;
+//   height: 250px;
+// }
+
+
+// .entire-list {
+//   display: flex;
+//   width: 100vw;
+//   flex-wrap: wrap;
+//   margin-left: 2vw;
+// }
+
+// .searchbar {
+//   margin-bottom: 2vh;
+// }
+
+// // .character-bio {
+// //   // display: flex;
+// // }
+
+// .bio-image {
+//   width: 25vw;
+//   position: relative;
+//   right: 30vw;
+//   margin-top: 8vh;
+// }
+
+// .caption {
+//   width: 50vw;
+//   position: relative;
+//   left: 42vw;
+//   bottom: 52vh;
+// }
 // .whole-list {
 //   display: flex;
 // }

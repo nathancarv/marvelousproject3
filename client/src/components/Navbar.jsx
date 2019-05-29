@@ -33,6 +33,7 @@ class Navbar extends Component {
                   <span class="icon-bar" />
                   <span class="icon-bar" />
                 </button> */}
+                <img style={{width: '8vw', marginRight: '10px'}} src="/images/MarvelLogo.svg"/>
                 <a className="navbar-brand" href="/">
                   Home
                 </a>
