@@ -1,36 +1,34 @@
 import React, { Component } from "react";
-import MarvelWrapper from "marvel-wrapper";
+import axios from 'axios';
 
-const marvel = new MarvelWrapper({
-  privateKey: process.env.REACT_APP_PRIVATE_KEY,
-  publicKey: process.env.REACT_APP_PUBLIC_KEY,
-  limit: "10"
-});
-
-class singleCharacter extends Component {
+class randomCharacter extends Component {
   state = {
     selectedcharacter: {}
   };
- 
+  
 
   componentDidMount() {
-    //marvel wrapper to fetch to that id from the api.... then you'll set it to state,  and then show the details belows
-    marvel.character.getCharacter(this.props.match.params.id).then(response => {
-      // do what you want with the response
-      // console.log(response.data.results[0])
-      console.log(response);
+    axios.get(`https://comicvine.gamespot.com/api/characters/?api_key=${process.env.REACT_APP_API_KEY}&format=json`)
+      .then(stuff=>console.log(stuff))
+   // marvel wrapper to fetch to that id from the api.... then you'll set it to state,  and then show the details belows
+    // marvel.character.getCharacter(this.props.match.params.id).then(response => {
+    //   // do what you want with the response
+    //   // console.log(response.data.results[0])
+    //   console.log(response);
 
-      marvel.comic.search(response.data.results[0].name).then(res => {
-        // do what you want with the response
-        if (response.data) {
-          this.setState({
-            allComics: res.data.results,
-            selectedcharacter: response.data.results[0]
-          });
-        }
-      });
-      // response.data.results.map(item => console.log(item))
-    });
+    //   marvel.comic.search(response.data.results[0].name).then(res => {
+    //     // do what you want with the response
+    //     if (response.data) {
+    //       this.setState({
+    //         allComics: res.data.results,
+    //         selectedcharacter: response.data.results[0]
+    //       });
+    //     }
+    //   });
+    //   // response.data.results.map(item => console.log(item))
+    // });
+
+    console.log()
   }
 
   displayCharacter = () => {
@@ -104,4 +102,4 @@ class singleCharacter extends Component {
     return <div>{this.displayCharacter()}</div>;
   }
 }
-export default singleCharacter;
+export default randomCharacter;

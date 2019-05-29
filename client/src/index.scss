@@ -32,8 +32,8 @@ $primary:black;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 90%;
-  width:100vw;
-  height:120vh;
+  // width:100vw;
+  height:110vh;
   color: white;
 }
 
@@ -138,8 +138,8 @@ div.characterspage{
   background-attachment: fixed;
   background-position: 50%;
   font-family: 'Bangers', cursive;
-  width:100vw;
-  height:120vh;
+  // width:100vw;
+  height:500vh;
 
   // background-size: cover;
 }
@@ -182,6 +182,19 @@ div.hometitle{
   font-family: 'Bangers', cursive;
   color: white;
   font-size: 25px;
+  padding-bottom: 500px;
+}
+
+.card-title{
+  color: black;
+  font-family: 'Bangers', cursive;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+  background-color: black !important;
+  font-family: 'Bangers', cursive;
+  color: white !important;
 }
 // .characterslist {
 //   width: 18vw;

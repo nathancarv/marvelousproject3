@@ -5,7 +5,8 @@ const userSchema = new Schema({
   username: String,
   password: String,
   comics : Array, 
-  characters: Array 
+  characters: Array, 
+  cards: Array
 }, {
     timestamps: {
       createdAt: 'created_at',

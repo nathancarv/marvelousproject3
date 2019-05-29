@@ -33,7 +33,7 @@ class Navbar extends Component {
                   <span class="icon-bar" />
                   <span class="icon-bar" />
                 </button> */}
-                <img style={{width: '8vw', marginRight: '10px'}} src="/logo/MarvelLogo.svg"/>
+
                 <a className="navbar-brand" href="/">
                   Home
                 </a>
@@ -43,8 +43,11 @@ class Navbar extends Component {
                 <a className="navbar-brand" href="/characters">
                   Characters
                 </a>
-                <a className="navbar-brand" href="/comics">
-                  Comics
+                <a className="navbar-brand" href="/collection">
+                  Collect
+                </a>
+                <a className="navbar-brand" href="/randomCharacter">
+                  randomCharacter
                 </a>
               </div>
               {/* <div className="collapse navbar-collapse" id="myNavbar">

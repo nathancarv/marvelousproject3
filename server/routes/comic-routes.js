@@ -34,7 +34,7 @@ router.get('/comic/:id', (req, res, next) =>{
 
 
 
-router.get('/charaters', (req, res, next) => {
+router.get('/characters', (req, res, next) => {
   axios.get(`https://comicvine.gamespot.com/api/characters/?api_key=${process.env.apiKey}&format=json`)
   .then(infoFromAPI => {
     res.status(200).json(infoFromAPI)

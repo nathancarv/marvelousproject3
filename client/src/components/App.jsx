@@ -4,7 +4,7 @@ import { Route, Link, NavLink, Switch } from 'react-router-dom';
 // import Countries from './pages/Countries';
 import Characters from './characters';
 import singleCharacter from './singleCharacter';
-import Comics from './comics';
+import Collect from './collection';
 import Login from './login';
 import Signup from './signup';
 import Home from './home';
@@ -12,6 +12,7 @@ import Profile from './profile';
 import api from '../api';
 import Navbar from './Navbar';
 import MarvelWrapper from 'marvel-wrapper';
+import randomCharacter from './randomCharacter';
 
 
 console.log(23454334534, process.env)
@@ -50,8 +51,8 @@ export default class App extends Component {
         <Route path="/profile" exact component={Profile} /> 
           <Route path="/characters" exact component={Characters} /> 
           <Route path="/singleCharacter/:id" exact component={singleCharacter} /> 
-
-          <Route path="/comics" exact component={Comics} />
+          <Route path="/randomCharacter" exact component={randomCharacter}/>
+          <Route path="/collection" exact component={Collect} />
           <Route path="/signup" component={Signup} />
           <Route path="/login" component={Login} />
           <Route render={() => <h2>404</h2>} />
