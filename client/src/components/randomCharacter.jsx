@@ -53,7 +53,6 @@ class randomCharacter extends Component {
       // response.data.results.map(item => console.log(item))
     });
     }
-
     render() {
       return (
         <div>
