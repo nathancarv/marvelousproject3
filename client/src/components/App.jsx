@@ -13,6 +13,7 @@ import api from '../api';
 import Navbar from './Navbar';
 import MarvelWrapper from 'marvel-wrapper';
 import randomCharacter from './randomCharacter';
+// import Landing from './LandingPage';
 
 
 console.log(23454334534, process.env)
@@ -25,7 +26,8 @@ const marvel = new MarvelWrapper({
 
 export default class App extends Component {
   state = {
-      countries: []
+      countries: [],
+      user: {}
     
   }
 
@@ -38,17 +40,25 @@ export default class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Marvel Fan Club</h1>
-         
+          <img src = "/logo/MarvelLogo.svg" class="navlogo" alt="..."/>
+          <br/>
+          <NavLink to="/">Home</NavLink>
+          {api.isLoggedIn() && <NavLink to="/profile">Profile</NavLink>}
+          <NavLink to="/characters">Characters</NavLink>
+          {/* {api.isLoggedIn() && <NavLink to="/randomCharacter">Random Character</NavLink>} */}
           {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
           {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
+          {/* {!api.isLoggedIn() && <NavLink to="/">Landing</NavLink>} */}
           {api.isLoggedIn() && <Link to="/" onClick={(e) => this.handleLogoutClick(e)}>Logout</Link>}
       
 
         </header>
-        <Navbar/>
+        {/* <Navbar/> */}
         <Switch>
         <Route path="/" exact component={Home} /> 
-        <Route path="/profile" exact component={Profile} /> 
+    <Route path="/profile" exact component={(props) => <Profile user={this.state.user} {...props} /> }/>
+
+
           <Route path="/characters" exact component={Characters} /> 
           <Route path="/singleCharacter/:id" exact component={singleCharacter} /> 
           <Route path="/randomCharacter" exact component={randomCharacter}/>

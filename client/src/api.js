@@ -63,26 +63,26 @@ export default {
 
   // This is an example on how to use this method in a different file
   // api.getCountries().then(countries => { /* ... */ })
-  getCountries() {
-    return service
-      .get('/countries')
-      .then(res => res.data)
-      .catch(errHandler)
-  },
+  // getCountries() {
+  //   return service
+  //     .get('/countries')
+  //     .then(res => res.data)
+  //     .catch(errHandler)
+  // },
 
-  addCountry(body) {
-    return service
-      .post('/countries', body)
-      .then(res => res.data)
-      .catch(errHandler)
-  },
+  // addCountry(body) {
+  //   return service
+  //     .post('/countries', body)
+  //     .then(res => res.data)
+  //     .catch(errHandler)
+  // },
 
-  getSecret() {
-    return service
-      .get('/secret')
-      .then(res => res.data)
-      .catch(errHandler)
-  },
+  // getSecret() {
+  //   return service
+  //     .get('/secret')
+  //     .then(res => res.data)
+  //     .catch(errHandler)
+  // },
 
   addPicture(file) {
     const formData = new FormData()
@@ -99,7 +99,7 @@ export default {
 
   getRandomCharacters() {
     return service
-    .get('/randomCharacters')
+    .get('/getRandom')
     .then(res => res.data)
       .catch(errHandler)
   }

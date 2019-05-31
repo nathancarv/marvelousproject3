@@ -37,6 +37,14 @@ $primary:black;
   color: white;
 }
 
+div.profilepage{
+  background-image: url("./images/profile.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height:110vh;
+
+}
+
 .info {
   margin: 20px;
   padding: 10px 20px;
@@ -68,6 +76,7 @@ $primary:black;
     background-color: $primary;
     padding: 20px;
     color: white;
+    font-family: 'Bangers', cursive;
 
     a {
       color: white;
@@ -140,6 +149,7 @@ div.characterspage{
   font-family: 'Bangers', cursive;
   // width:100vw;
   height:500vh;
+  color: white;
 
   // background-size: cover;
 }
@@ -195,6 +205,45 @@ div.hometitle{
   background-color: black !important;
   font-family: 'Bangers', cursive;
   color: white !important;
+}
+
+.navlogo{
+  width: 80px;
+}
+
+button.btn.btn-primary.btn-lg{
+  margin-top: 5%;
+}
+
+div.Signup{
+  background-image: url("./images/signup.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50%;
+  height:500vh;
+  font-family: 'Bangers', cursive;
+}
+
+div.Login{
+  background-image: url("./images/signup.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50%;
+  height:500vh;
+  font-family: 'Bangers', cursive;
+}
+
+div.randomCharacpage{
+  background-image: url("./images/randomcharac.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50%;
+  height:500vh;
+  font-family: 'Bangers', cursive;
+  color: black;
 }
 // .characterslist {
 //   width: 18vw;
