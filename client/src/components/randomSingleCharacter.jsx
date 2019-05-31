@@ -13,7 +13,7 @@ class randomCharacter extends Component {
     marvelcharacters: [],
     comments: [],
     comment: '',
-    usersname: "Niko",
+    usersname: "Nathan",
 
     
   }

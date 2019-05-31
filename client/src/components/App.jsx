@@ -50,6 +50,7 @@ export default class App extends Component {
           {/* {api.isLoggedIn() && <NavLink to="/randomCharacter">Random Character</NavLink>} */}
           {!api.isLoggedIn() && <NavLink to="/signup">Signup</NavLink>}
           {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
+          {api.isLoggedIn() && <NavLink to="/randomSingleCharacter">Forum</NavLink>}
           {/* {!api.isLoggedIn() && <NavLink to="/">Landing</NavLink>} */}
           {api.isLoggedIn() && <Link to="/" onClick={(e) => this.handleLogoutClick(e)}>Logout</Link>}
       
@@ -63,6 +64,7 @@ export default class App extends Component {
 
           <Route path="/characters" exact component={Characters} /> 
           <Route path="/singleCharacter/:id" exact component={singleCharacter} /> 
+          <Route path="/randomCharacter" exact component={randomCharacter}/>
           <Route path="/randomSingleCharacter" exact component={randomSingleCharacter}/>
           <Route path="/collection" exact component={Collect} />
           <Route path="/signup" component={Signup} />
