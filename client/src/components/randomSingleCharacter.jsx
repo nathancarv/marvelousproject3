@@ -176,7 +176,7 @@ class randomCharacter extends Component {
     showComments = () => {
       return this.state.comments.map(eachComment=>{
         console.log(eachComment)
-        return <li>{eachComment.comment} posted by {eachComment.usersname}</li> 
+        return <li>{eachComment.comment}  <span className="charposted">  posted by {eachComment.usersname}</span></li> 
       })
     }
 
@@ -185,7 +185,8 @@ class randomCharacter extends Component {
     render() {
       return (
         <div className="randomCharacpage">
-          <h2> Answer the questions correctly and earn your favorite character cards! </h2>
+          <h2> Forum </h2>
+          <p>Chat, discuss, inform...</p>
           
           {/* button will generate this  */}
           

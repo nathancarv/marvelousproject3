@@ -251,6 +251,29 @@ div.randomCharacpage{
   justify-content: center;
   align-items: center;
 }
+
+li {
+  display: flex;
+  border: 1px solid;
+  width: 30%;
+}
+.charposted{
+  margin-left: 20px;
+  border-left: 1px solid;
+}
+.profilepic{
+  width: 17%;
+  border-radius: 50%;
+  padding-bottom: 5%;
+  padding-top: 5%;
+
+}
+.cardpic{
+  width: 60%;
+}
+div.col-md-auto.profile{
+  padding-top: 25%;
+}
 // .characterslist {
 //   width: 18vw;
 //   background: black;
