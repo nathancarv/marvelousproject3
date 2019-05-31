@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Comic = require('../models/Comic')
+const Comment = require('../models/Comment')
+
 const router = express.Router();
 const axios = require('axios');
 const characters = require('../character.json')
@@ -52,6 +54,19 @@ router.post('/addCard', (req, res, next) => {
   .then(updatedUser => {
     res.json(updatedUser);
   }).catch(err => res.json(err))
+})
+
+
+router.post('/saveComment', (req,res,next) => {
+  Comment.create(req.body).then(result=>{
+    res.json({result})
+  })
+})
+
+router.get('/comments', (req,res,next) => {
+  Comment.find({}).then(result=>{
+    res.json({result})
+  })
 })
 
 

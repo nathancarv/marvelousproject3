@@ -2,10 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const commentSchema = new Schema({
-  text:'String',
+  comment:'String',
   userId: {
-    type: mongoose.Schema.Types.ObjectId, ref="User"
- }
+    type: mongoose.Schema.Types.ObjectId, ref:"User"
+ },
+ usersname: "String",
+ characterName: "String"
 }, {
     timestamps: {
       createdAt: 'created_at',

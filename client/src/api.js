@@ -102,5 +102,18 @@ export default {
     .get('/getRandom')
     .then(res => res.data)
       .catch(errHandler)
+  },
+
+  saveComment(state) {
+    return service
+    .post('/saveComment', state)
+    .then(res=>res.data)
+    .catch(errHandler)
+  },
+  getComments(character){
+    return service
+      .get(`/comments?${character}`)
+      .then(res=>res.data)
+      .catch(errHandler)
   }
 }

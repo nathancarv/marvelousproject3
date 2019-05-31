@@ -10,13 +10,21 @@ const marvel = new MarvelWrapper({
 });
 class randomCharacter extends Component {
   state = {
-    marvelcharacters: []
+    marvelcharacters: [],
+    comments: [],
+    comment: '',
+    usersname: "Niko",
+
     
   }
   
     
     
     componentDidMount() {
+
+      console.log(this)
+
+    
 
       // console.log("the characters from the server ----- ", this.state.marvelcharacters)
       
@@ -34,6 +42,9 @@ class randomCharacter extends Component {
 
       this.theRandomChars()
       this.theMainChar()
+
+      
+
       
       // console.log("getting ready to show characters random ------ ", process.env)
       // api.getRandomCharacters()
@@ -98,6 +109,8 @@ class randomCharacter extends Component {
       .then(res => {
         console.log(" this is the random char res >>>>>>>>>>>> ", res)
         this.setState({marvelcharacters:res})
+        console.log('fetch ',res[0])
+        this.fetchCharacterComments(res[0])
       }).catch(err => console.log("error getting random character random ------ ", err))
     }
 
@@ -120,21 +133,52 @@ class randomCharacter extends Component {
     //   });
     // }
 
+    fetchCharacterComments = (character) => {
+      console.log('character',character)
+      api.getComments(character).then(commentsAboutCharacter=>{
+        console.log(commentsAboutCharacter)
+        this.setState({comments:commentsAboutCharacter.result})
+      })
+    }
+
     showTheCharacters() {
       if(this.state.marvelcharacters.length > 0) {
         console.log("yyyeeeeessssss", this.state.marvelcharacters);
+        let marvelcharacters = [...this.state.marvelcharacters][0]
+        console.log(marvelcharacters)
+
+        //this.fetchCharacterComments(marvelcharacters)
         
-        return this.state.marvelcharacters.map((oneChar, i) => {
-          return (
-            <h2 key={i}>
-              Name: {oneChar}
-            </h2>
-          )
-        })
+        // this.setState({character:marvelcharacters}, () => {
+        //   //this.fetchCharacterComments(marvelcharacters) 
+        // })
+        return <h2>{marvelcharacters}</h2>
+
         
       }
     }
 
+    setComment = (e) => {
+      this.setState({
+        comment:e.target.value
+      })
+    }
+    saveComment = () => {
+      console.log('save comment',this.state)
+      api.saveComment(this.state).then((result)=>{
+        console.log(result, this.state)
+        this.setState({
+          comments: [...this.state.comments, {comment: this.state.comment}]
+        })
+      })
+    }
+
+    showComments = () => {
+      return this.state.comments.map(eachComment=>{
+        console.log(eachComment)
+        return <li>{eachComment.comment} posted by {eachComment.usersname}</li> 
+      })
+    }
 
 
 
@@ -179,6 +223,9 @@ class randomCharacter extends Component {
               </div>
             </div>
 
+              <input type="text" placeholder="comment" onChange={this.setComment}/>
+              <button onClick={this.saveComment}>Post</button>
+                {this.showComments()}
             {/* </Link> */}
             {/* <h4>{this.state.selectedcharacter.description}</h4> */}
           </div>

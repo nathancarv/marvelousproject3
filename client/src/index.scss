@@ -243,7 +243,13 @@ div.randomCharacpage{
   background-position: 50%;
   height:500vh;
   font-family: 'Bangers', cursive;
-  color: black;
+  color: white;
+}
+
+.middleColumn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 // .characterslist {
 //   width: 18vw;

@@ -13,6 +13,8 @@ import api from '../api';
 import Navbar from './Navbar';
 import MarvelWrapper from 'marvel-wrapper';
 import randomCharacter from './randomCharacter';
+import randomSingleCharacter from './randomSingleCharacter';
+
 // import Landing from './LandingPage';
 
 
@@ -61,7 +63,7 @@ export default class App extends Component {
 
           <Route path="/characters" exact component={Characters} /> 
           <Route path="/singleCharacter/:id" exact component={singleCharacter} /> 
-          <Route path="/randomCharacter" exact component={randomCharacter}/>
+          <Route path="/randomSingleCharacter" exact component={randomSingleCharacter}/>
           <Route path="/collection" exact component={Collect} />
           <Route path="/signup" component={Signup} />
           <Route path="/login" component={Login} />
