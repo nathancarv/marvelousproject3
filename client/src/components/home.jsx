@@ -5,7 +5,7 @@ class Home extends Component {
   render() {
     return (
       <div className="homepage">
-        <div className="hometitle">"...And I am Iron man"</div>
+        <div className="hometitle">"under construction..."</div>
         <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
         <div class="container collectcard">
           <div class="row">
