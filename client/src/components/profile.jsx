@@ -14,7 +14,7 @@ class Profile extends Component {
   render() {
     return (
       <div className="profilepage">
-        <div class="container">
+        {/* <div class="container">
           <div class="row justify-content-md-center">
             <div class="col col-lg-2"></div>
             <div class="col-md-auto profile"><img
@@ -35,7 +35,7 @@ class Profile extends Component {
               <div class="col"><img className="cardpic" src="/logo/wolverinecard.png" alt="..."/></div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }
